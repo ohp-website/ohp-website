@@ -34,8 +34,8 @@ const pillars = [
   },
   {
     number: '06',
-    title: 'Voeding & Dieet',
-    body: 'Voeding als tool, niet als therapie. Whole foods, seizoensgebonden eten en carnivoor perspectief.',
+    title: 'Voeding & Antropologie',
+    body: 'Voeding als tool, niet als therapie. Whole foods, evolutionair eten en carnivoor perspectief.',
     href: '/publicaties?pillar=voeding',
   },
 ]

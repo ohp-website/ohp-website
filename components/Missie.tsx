@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from './Missie.module.css'
 
 export default function Missie() {
@@ -6,9 +7,13 @@ export default function Missie() {
     <section className={styles.section} id="meer">
       <div className={styles.inner}>
         <div className={styles.portrait}>
-          <div className={styles.portraitPlaceholder}>
-            <span>Foto Philip</span>
-          </div>
+          <Image
+            src="/images/philip.png"
+            alt="Philip Sliwinski — Optimal Health Performance"
+            fill
+            className={styles.portraitImg}
+            sizes="(max-width: 768px) 100vw, 40vw"
+          />
         </div>
 
         <div className={styles.content}>

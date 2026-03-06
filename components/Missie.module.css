@@ -14,20 +14,12 @@
 
 .portrait {
   position: relative;
+  aspect-ratio: 3 / 4;
 }
 
-.portraitPlaceholder {
-  aspect-ratio: 3 / 4;
-  background: rgba(45, 90, 39, 0.12);
-  border: 1px solid rgba(45, 90, 39, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--deep-green);
-  font-size: 0.8rem;
-  letter-spacing: 0.15em;
-  text-transform: uppercase;
-  opacity: 0.5;
+.portraitImg {
+  object-fit: cover;
+  object-position: center top;
 }
 
 .content {
@@ -94,7 +86,7 @@
     grid-template-columns: 1fr;
   }
 
-  .portraitPlaceholder {
+  .portrait {
     aspect-ratio: 4 / 3;
   }
 }
