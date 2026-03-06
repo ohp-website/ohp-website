@@ -12,7 +12,6 @@ export default function Boek() {
               <div className={styles.bookContent}>
                 <p className={styles.bookLabel}>Philip Sliwinski</p>
                 <h3 className={styles.bookTitle}>Een lang leven vitaal</h3>
-                <p className={styles.bookSubtitle}>Het Carnivoor Dieet</p>
                 <div className={styles.bookDivider} />
                 <p className={styles.bookPub}>Optimal Health Performance</p>
               </div>
@@ -22,7 +21,7 @@ export default function Boek() {
 
         <div className={styles.content}>
           <p className={styles.eyebrow}>Boek</p>
-          <h2 className={styles.title}>Een lang leven vitaal: Het Carnivoor Dieet</h2>
+          <h2 className={styles.title}>Een lang leven vitaal</h2>
           <p className={styles.body}>
             Ontdek hoe een carnivoor voedingspatroon, gecombineerd met inzicht in bioritme en hormonen,
             bijdraagt aan langdurige vitaliteit. Geen modieus dieetboek — maar een wetenschappelijk
