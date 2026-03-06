@@ -11,7 +11,7 @@ export default function Footer() {
             src="/logo.png"
             alt="Optimal Health Performance"
             width={160}
-            height={64}
+            height={80}
             className={styles.logo}
           />
           <p className={styles.tagline}>
