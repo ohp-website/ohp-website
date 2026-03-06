@@ -6,11 +6,11 @@ import Link from 'next/link'
 import styles from './Nav.module.css'
 
 const navLinks = [
-  { label: 'Methode', href: '/methode' },
-  { label: 'Wetenschap', href: '/wetenschap' },
-  { label: "Programma's", href: '/programmas' },
-  { label: 'Over Ons', href: '/over' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Over Philip', href: '/over' },
+  { label: 'KennisKuur', href: '/kenniskuur' },
+  { label: 'Publicaties', href: '/publicaties' },
+  { label: 'Boek', href: '/boek' },
+  { label: 'Community', href: '/community' },
 ]
 
 export default function Nav() {

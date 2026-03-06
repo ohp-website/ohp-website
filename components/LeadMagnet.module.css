@@ -1,0 +1,99 @@
+.section {
+  background: #d4eef7;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
+}
+
+.inner {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: clamp(3rem, 6vw, 6rem);
+  align-items: center;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #1a3a5c;
+  opacity: 0.7;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  color: #1a3a5c;
+  line-height: 1.25;
+}
+
+.body {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(26, 58, 92, 0.7);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.input {
+  width: 100%;
+  padding: 1rem 1.2rem;
+  background: #fff;
+  border: 1px solid rgba(26, 58, 92, 0.2);
+  color: #1a3a5c;
+  font-size: 0.9rem;
+  font-family: var(--font-inter), sans-serif;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.input::placeholder {
+  color: rgba(26, 58, 92, 0.4);
+}
+
+.input:focus {
+  border-color: #1a3a5c;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  background: #1a3a5c;
+  color: #fff;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-inter), sans-serif;
+  transition: opacity 0.3s ease;
+}
+
+.btn:hover {
+  opacity: 0.85;
+}
+
+.fine {
+  font-size: 0.75rem;
+  color: rgba(26, 58, 92, 0.45);
+  font-weight: 300;
+}
+
+@media (max-width: 768px) {
+  .inner {
+    grid-template-columns: 1fr;
+  }
+}
