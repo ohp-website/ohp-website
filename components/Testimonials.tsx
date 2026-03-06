@@ -1,6 +1,6 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import styles from './Testimonials.module.css'
 
@@ -13,64 +13,59 @@ const screenshots = [
   '/images/testimonials/t6.jpg',
 ]
 
+// Triple for seamless infinite loop
+const repeated = [...screenshots, ...screenshots, ...screenshots]
+
 export default function Testimonials() {
-  const [active, setActive] = useState(0)
-
-  useEffect(() => {
-    const timer = setInterval(() => {
-      setActive((prev) => (prev + 1) % screenshots.length)
-    }, 4000)
-    return () => clearInterval(timer)
-  }, [])
-
-  const indices = [
-    (active + screenshots.length - 1) % screenshots.length,
-    active,
-    (active + 1) % screenshots.length,
-  ]
+  const [lightbox, setLightbox] = useState<string | null>(null)
 
   return (
     <section className={styles.section}>
-      <div className={styles.inner}>
-        <div className={styles.header}>
-          <p className={styles.eyebrow}>Wat leden zeggen</p>
-          <h2 className={styles.title}>98% van onze leden verlengt maand na maand.</h2>
-        </div>
+      <div className={styles.header}>
+        <p className={styles.eyebrow}>Wat leden zeggen</p>
+        <h2 className={styles.title}>98% van onze leden verlengt maand na maand.</h2>
+      </div>
 
-        <div className={styles.carousel}>
-          {indices.map((idx, pos) => (
+      <div className={styles.track} onMouseEnter={(e) => {
+        const el = e.currentTarget.querySelector(`.${styles.inner}`) as HTMLElement
+        if (el) el.style.animationPlayState = 'paused'
+      }} onMouseLeave={(e) => {
+        const el = e.currentTarget.querySelector(`.${styles.inner}`) as HTMLElement
+        if (el) el.style.animationPlayState = 'running'
+      }}>
+        <div className={styles.inner}>
+          {repeated.map((src, i) => (
             <div
-              key={`${idx}-${pos}`}
-              className={`${styles.screenshot} ${pos === 1 ? styles.screenshotCenter : styles.screenshotSide}`}
-              onClick={() => pos === 0
-                ? setActive((active + screenshots.length - 1) % screenshots.length)
-                : pos === 2
-                  ? setActive((active + 1) % screenshots.length)
-                  : undefined
-              }
+              key={i}
+              className={styles.card}
+              onClick={() => setLightbox(src)}
             >
               <Image
-                src={screenshots[idx]}
-                alt={`Testimonial ${idx + 1}`}
+                src={src}
+                alt={`Testimonial ${(i % screenshots.length) + 1}`}
                 fill
-                className={styles.screenshotImg}
-                sizes="(max-width: 768px) 80vw, 30vw"
+                className={styles.cardImg}
+                sizes="260px"
               />
             </div>
           ))}
         </div>
-
-        <div className={styles.dots}>
-          {screenshots.map((_, i) => (
-            <button
-              key={i}
-              className={`${styles.dot} ${i === active ? styles.dotActive : ''}`}
-              onClick={() => setActive(i)}
-              aria-label={`Testimonial ${i + 1}`}
-            />
-          ))}
-        </div>
       </div>
+
+      {lightbox && (
+        <div className={styles.lightbox} onClick={() => setLightbox(null)}>
+          <div className={styles.lightboxInner} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.lightboxClose} onClick={() => setLightbox(null)}>✕</button>
+            <Image
+              src={lightbox}
+              alt="Testimonial"
+              width={480}
+              height={680}
+              className={styles.lightboxImg}
+            />
+          </div>
+        </div>
+      )}
     </section>
   )
 }
