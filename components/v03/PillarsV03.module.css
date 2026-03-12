@@ -1,0 +1,116 @@
+.section {
+  background: #0f1f14;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
+}
+
+.header {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: end;
+  gap: 2rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.7;
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 700;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: #f0ebe3;
+  line-height: 1.05;
+  grid-column: 1;
+  grid-row: 2;
+}
+
+/* Lijst */
+.list {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  display: grid;
+  grid-template-columns: 5rem 1fr auto;
+  align-items: center;
+  gap: 2rem;
+  padding: 1.75rem 0;
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.item:first-child {
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+.item:hover {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: -1rem;
+  margin-right: -1rem;
+  background: rgba(255,255,255,0.03);
+}
+
+.number {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2.5rem;
+  font-weight: 300;
+  color: var(--gold);
+  opacity: 0.35;
+  line-height: 1;
+  transition: opacity 0.3s ease;
+}
+
+.item:hover .number { opacity: 0.8; }
+
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.itemTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #f0ebe3;
+  line-height: 1.2;
+}
+
+.itemBody {
+  font-size: 0.875rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(240, 235, 227, 0.4);
+  max-width: 560px;
+}
+
+.arrow {
+  font-size: 1.1rem;
+  color: var(--gold);
+  opacity: 0;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.item:hover .arrow {
+  opacity: 0.7;
+  transform: translateX(4px);
+}
+
+@media (max-width: 768px) {
+  .header { grid-template-columns: 1fr; }
+  .item { grid-template-columns: 3rem 1fr; }
+  .arrow { display: none; }
+}

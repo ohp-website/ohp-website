@@ -1,5 +1,4 @@
 import Image from 'next/image'
-import Link from 'next/link'
 import styles from './Hero.module.css'
 
 export default function Hero() {
@@ -46,12 +45,12 @@ export default function Hero() {
         </p>
 
         <div className={styles.ctas}>
-          <Link href="/kenniskuur" className={styles.btnPrimary}>
+          <span className={styles.btnPrimary}>
             Start je kenniskuur
-          </Link>
-          <Link href="#meer" className={styles.btnSecondary}>
+          </span>
+          <span className={styles.btnSecondary}>
             Ontdek meer <span className={styles.arrow}>↓</span>
-          </Link>
+          </span>
         </div>
       </div>
 

@@ -1,0 +1,136 @@
+.section {
+  background: #F5F0E8;
+  padding: clamp(4rem, 8vw, 7rem) 0;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0 clamp(2rem, 6vw, 8rem);
+  margin-bottom: 3rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  opacity: 0.6;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(1.8rem, 2.8vw, 2.6rem);
+  color: var(--deep-green);
+  line-height: 1.2;
+}
+
+.sub {
+  font-size: 0.85rem;
+  color: var(--deep-green);
+  opacity: 0.45;
+  font-weight: 300;
+}
+
+/* ── Twee rijen ── */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.track {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 8%, black 92%, transparent 100%);
+}
+
+.inner {
+  display: flex;
+  gap: 1.25rem;
+  width: max-content;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-33.333%); }
+  to   { transform: translateX(0); }
+}
+
+.innerLeft  { animation: scrollLeft  40s linear infinite; }
+.innerRight { animation: scrollRight 36s linear infinite; }
+
+.paused { animation-play-state: paused !important; }
+
+.card {
+  position: relative;
+  width: 220px;
+  height: 320px;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.18);
+}
+
+.cardImg {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.88);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightboxInner {
+  position: relative;
+  cursor: default;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: opacity 0.2s ease;
+  padding: 0.25rem;
+}
+
+.lightboxClose:hover { opacity: 1; }
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}

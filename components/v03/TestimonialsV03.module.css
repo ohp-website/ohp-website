@@ -1,0 +1,208 @@
+.section {
+  background: #060c08;
+  padding-top: clamp(5rem, 10vw, 9rem);
+  overflow: hidden;
+}
+
+/* ── Hero quote ── */
+.quoteWrap {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 clamp(2rem, 6vw, 8rem) clamp(4rem, 6vw, 6rem);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: 0.75;
+}
+
+.quote {
+  position: relative;
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.6rem, 3vw, 2.8rem);
+  font-weight: 400;
+  font-style: italic;
+  color: #f0ebe3;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.quoteMark {
+  font-size: 5rem;
+  line-height: 0;
+  vertical-align: -1.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+  font-style: normal;
+  margin-right: 0.1em;
+}
+
+.quoteMarkClose {
+  font-size: 5rem;
+  line-height: 0;
+  vertical-align: -1.5rem;
+  color: var(--gold);
+  opacity: 0.4;
+  font-style: normal;
+  margin-left: 0.1em;
+}
+
+.author {
+  font-size: 0.8rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.35);
+  font-style: normal;
+}
+
+/* ── Stats ── */
+.statsBar {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  border-top: 1px solid rgba(201, 168, 76, 0.12);
+  border-bottom: 1px solid rgba(201, 168, 76, 0.12);
+  margin-bottom: clamp(3rem, 5vw, 5rem);
+}
+
+.stat {
+  flex: 1;
+  max-width: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 2rem 1rem;
+  border-right: 1px solid rgba(201, 168, 76, 0.12);
+}
+
+.stat:last-child {
+  border-right: none;
+}
+
+.statNumber {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 600;
+  color: #f0ebe3;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(240, 235, 227, 0.35);
+}
+
+/* ── Dubbele carousel ── */
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-bottom: clamp(4rem, 8vw, 7rem);
+}
+
+.track {
+  width: 100%;
+  overflow: hidden;
+  mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, black 6%, black 94%, transparent 100%);
+}
+
+.inner {
+  display: flex;
+  gap: 1rem;
+  width: max-content;
+}
+
+@keyframes scrollLeft {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-33.333%); }
+}
+
+@keyframes scrollRight {
+  from { transform: translateX(-33.333%); }
+  to   { transform: translateX(0); }
+}
+
+.innerLeft  { animation: scrollLeft  42s linear infinite; }
+.innerRight { animation: scrollRight 36s linear infinite; }
+.paused     { animation-play-state: paused !important; }
+
+.card {
+  position: relative;
+  width: 200px;
+  height: 290px;
+  flex-shrink: 0;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px) scale(1.03);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+}
+
+.cardImg {
+  object-fit: cover;
+  object-position: top;
+}
+
+/* Lightbox */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.lightboxInner {
+  position: relative;
+  cursor: default;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: -2.5rem;
+  right: 0;
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.2s ease;
+  padding: 0.25rem;
+}
+
+.lightboxClose:hover { opacity: 1; }
+
+.lightboxImg {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .statsBar { flex-wrap: wrap; }
+  .stat { max-width: 50%; border-bottom: 1px solid rgba(201, 168, 76, 0.12); }
+}

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import Image from 'next/image'
 import styles from './Footer.module.css'
 
@@ -44,17 +43,17 @@ export default function Footer() {
         <nav className={styles.nav}>
           <div className={styles.navCol}>
             <p className={styles.navHeading}>Platform</p>
-            <Link href="/over" className={styles.navLink}>Over Philip</Link>
-            <Link href="/kenniskuur" className={styles.navLink}>De KennisKuur</Link>
-            <Link href="/publicaties" className={styles.navLink}>Publicaties</Link>
-            <Link href="/community" className={styles.navLink}>Community</Link>
+            <span className={styles.navLink}>Over Philip</span>
+            <span className={styles.navLink}>De KennisKuur</span>
+            <span className={styles.navLink}>Publicaties</span>
+            <span className={styles.navLink}>Community</span>
           </div>
           <div className={styles.navCol}>
             <p className={styles.navHeading}>Meer</p>
-            <Link href="/boek" className={styles.navLink}>Boek</Link>
-            <Link href="/contact" className={styles.navLink}>Contact</Link>
-            <Link href="/privacy" className={styles.navLink}>Privacybeleid</Link>
-            <Link href="/voorwaarden" className={styles.navLink}>Algemene voorwaarden</Link>
+            <span className={styles.navLink}>Boek</span>
+            <span className={styles.navLink}>Contact</span>
+            <span className={styles.navLink}>Privacybeleid</span>
+            <span className={styles.navLink}>Algemene voorwaarden</span>
           </div>
         </nav>
       </div>

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './KennisKuur.module.css'
 
 export default function KennisKuur() {
@@ -37,9 +36,9 @@ export default function KennisKuur() {
             </div>
           </div>
 
-          <Link href="/kenniskuur" className={styles.cta}>
+          <span className={styles.cta}>
             Start je KennisKuur
-          </Link>
+          </span>
         </div>
 
         <div className={styles.covers}>

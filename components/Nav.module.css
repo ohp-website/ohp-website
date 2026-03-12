@@ -23,7 +23,7 @@
 }
 
 .logo {
-  height: 80px;
+  height: 96px;
   width: auto;
   opacity: 0;
   animation: fadeIn 1s ease 0.3s forwards;
@@ -67,6 +67,34 @@
   width: 100%;
 }
 
+.ctaGroup {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.7s forwards;
+}
+
+.ctaSecondary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.65rem 1.5rem;
+  background: transparent;
+  color: var(--text-secondary);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color 0.3s ease, border-color 0.3s ease;
+}
+
+.ctaSecondary:hover {
+  color: var(--text-primary);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
 .cta {
   display: inline-flex;
   align-items: center;
@@ -79,12 +107,110 @@
   text-transform: uppercase;
   text-decoration: none;
   transition: opacity 0.3s ease;
-  opacity: 0;
-  animation: fadeIn 1s ease 0.7s forwards;
 }
 
 .cta:hover {
   opacity: 0.85;
+}
+
+/* Voorstellen dropdown */
+.voorstellenWrap {
+  position: relative;
+  opacity: 0;
+  animation: fadeIn 1s ease 0.6s forwards;
+}
+
+.voorstellenBtn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-size: 0.65rem;
+  font-weight: 300;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.25rem 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  opacity: 0.5;
+  transition: opacity 0.3s ease;
+}
+
+.voorstellenBtn:hover {
+  opacity: 1;
+}
+
+.caret {
+  font-size: 0.7rem;
+  transition: transform 0.2s ease;
+  display: inline-block;
+}
+
+.caretOpen {
+  transform: rotate(180deg);
+}
+
+.dropdown {
+  position: absolute;
+  top: calc(100% + 0.75rem);
+  right: 0;
+  background: var(--deep-green-90);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  list-style: none;
+  min-width: 220px;
+  padding: 0.5rem 0;
+  z-index: 200;
+}
+
+.dropdownLink {
+  display: block;
+  padding: 0.65rem 1.25rem;
+  color: var(--text-secondary);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  white-space: nowrap;
+  transition: color 0.2s ease, background 0.2s ease;
+}
+
+.dropdownLink:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* ── Light theme (voor crème/lichte achtergronden) ── */
+.light .logo {
+  filter: brightness(0) opacity(0.75);
+}
+
+.light .link {
+  color: rgba(15, 31, 20, 0.55);
+}
+
+.light .link:hover {
+  color: var(--deep-green);
+}
+
+.light .voorstellenBtn {
+  color: rgba(15, 31, 20, 0.55);
+}
+
+.light .ctaSecondary {
+  color: rgba(15, 31, 20, 0.55);
+  border-color: rgba(15, 31, 20, 0.2);
+}
+
+.light .ctaSecondary:hover {
+  color: var(--deep-green);
+  border-color: rgba(15, 31, 20, 0.5);
+}
+
+.light.scrolled {
+  background: rgba(247, 243, 238, 0.92);
 }
 
 @media (max-width: 768px) {

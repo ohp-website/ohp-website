@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './Publicaties.module.css'
 
 const publicaties = [
@@ -34,14 +33,14 @@ export default function Publicaties() {
             <p className={styles.eyebrow}>Kennisbank</p>
             <h2 className={styles.title}>Laatste publicaties</h2>
           </div>
-          <Link href="/publicaties" className={styles.allLink}>
+          <span className={styles.allLink}>
             Alle publicaties →
-          </Link>
+          </span>
         </div>
 
         <div className={styles.grid}>
           {publicaties.map((pub, i) => (
-            <Link key={i} href="/publicaties" className={styles.card}>
+            <div key={i} className={styles.card}>
               <div className={styles.cardCover}>
                 <p className={styles.coverEdition}>{pub.edition}</p>
                 <p className={styles.coverTitle}>{pub.title}</p>
@@ -56,7 +55,7 @@ export default function Publicaties() {
                   <span className={styles.memberLabel}>Alleen voor leden</span>
                 </div>
               </div>
-            </Link>
+            </div>
           ))}
         </div>
       </div>

@@ -1,4 +1,3 @@
-import Link from 'next/link'
 import styles from './Boek.module.css'
 
 export default function Boek() {
@@ -27,9 +26,9 @@ export default function Boek() {
             bijdraagt aan langdurige vitaliteit. Geen modieus dieetboek — maar een wetenschappelijk
             onderbouwd handboek voor wie de diepte in wil.
           </p>
-          <Link href="/boek" className={styles.cta}>
+          <span className={styles.cta}>
             Bestel het boek
-          </Link>
+          </span>
         </div>
       </div>
     </section>

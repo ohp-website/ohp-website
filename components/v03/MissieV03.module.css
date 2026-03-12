@@ -1,0 +1,91 @@
+.section {
+  background: #f7f4ef;
+  overflow: hidden;
+}
+
+.inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 75vh;
+  align-items: stretch;
+}
+
+.content {
+  padding: clamp(5rem, 10vw, 9rem) clamp(3rem, 7vw, 9rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+  justify-content: center;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  opacity: 0.5;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 700;
+  font-size: clamp(2.4rem, 4vw, 4rem);
+  color: var(--deep-green);
+  line-height: 1.1;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(15, 42, 27, 0.6);
+  max-width: 460px;
+}
+
+.pullquote {
+  border-left: 2px solid var(--gold);
+  padding-left: 1.5rem;
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.25rem;
+  font-style: italic;
+  color: var(--deep-green);
+  line-height: 1.6;
+  margin: 0;
+  opacity: 0.75;
+}
+
+.link {
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  cursor: pointer;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.link:hover { opacity: 1; }
+
+/* Portrait */
+.portrait {
+  position: relative;
+}
+
+.portraitImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.portraitOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, #f7f4ef 0%, transparent 20%);
+}
+
+@media (max-width: 900px) {
+  .inner { grid-template-columns: 1fr; }
+  .portrait { min-height: 400px; order: -1; }
+  .portraitOverlay { background: linear-gradient(180deg, transparent 60%, #f7f4ef 100%); }
+}

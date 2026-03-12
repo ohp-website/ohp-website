@@ -1,0 +1,198 @@
+.hero {
+  background: #f7f3ee;
+  padding: clamp(7rem, 14vw, 12rem) clamp(2rem, 6vw, 8rem) clamp(5rem, 10vw, 9rem);
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(3rem, 7vw, 9rem);
+  align-items: start;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  gap: 2.25rem;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.metaLine {
+  display: block;
+  width: 2.5rem;
+  height: 1px;
+  background: var(--gold);
+  opacity: 0.6;
+}
+
+.metaLabel {
+  font-size: 0.62rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  opacity: 0.4;
+}
+
+.headline {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 700;
+  font-size: clamp(3.8rem, 6.5vw, 7rem);
+  color: var(--deep-green);
+  line-height: 1.0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.italic {
+  font-style: italic;
+  font-weight: 300;
+  opacity: 0.4;
+}
+
+.body {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(15, 31, 20, 0.55);
+  max-width: 420px;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.ctaPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2.2rem;
+  background: var(--deep-green);
+  color: #f7f3ee;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.ctaPrimary:hover { opacity: 0.8; }
+
+.ctaLink {
+  font-size: 0.7rem;
+  font-weight: 400;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  opacity: 0.4;
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+}
+
+.ctaLink:hover { opacity: 0.85; }
+
+/* Right — editorial photo */
+.right {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  padding-top: 1rem;
+}
+
+.photoContainer {
+  position: relative;
+  width: 100%;
+}
+
+.photoWrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 2/3;
+  overflow: hidden;
+  background: #e0dcd5;
+}
+
+.photo {
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.caption {
+  font-size: 0.62rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--deep-green);
+  opacity: 0.25;
+  text-align: right;
+  font-style: italic;
+}
+
+/* ── Zwevende elementen ── */
+@keyframes floatA {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50%       { transform: translateY(-8px) rotate(-3deg); }
+}
+
+@keyframes floatB {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-7px); }
+}
+
+/* Boek: linksonder, deels buiten de foto */
+.floatBook {
+  position: absolute;
+  bottom: -1.5rem;
+  left: calc(-1.75rem - 130px);
+  width: 224px;
+  height: 314px;
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.2),
+    0 3px 8px rgba(0,0,0,0.12);
+  animation: floatA 5s ease-in-out infinite;
+  z-index: 2;
+}
+
+.floatBookImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+/* Portret: rechtsbovenin, deels buiten de foto */
+.floatPortrait {
+  position: absolute;
+  top: -1.25rem;
+  right: calc(-1.25rem - 80px);
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow:
+    0 8px 24px rgba(0,0,0,0.18),
+    0 3px 8px rgba(0,0,0,0.1);
+  animation: floatB 6s ease-in-out infinite;
+  animation-delay: 0.8s;
+  z-index: 2;
+}
+
+.floatPortraitImg {
+  object-fit: cover;
+  object-position: center top;
+}
+
+@media (max-width: 768px) {
+  .inner { grid-template-columns: 1fr; gap: 3rem; }
+  .right { order: -1; }
+  .photoWrap { aspect-ratio: 4/3; }
+  .floatBook { width: 80px; height: 112px; left: -0.75rem; }
+  .floatPortrait { width: 88px; height: 88px; right: -0.75rem; }
+}
