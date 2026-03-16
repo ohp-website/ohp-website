@@ -18,6 +18,7 @@ const voorstellenItems = [
   { label: 'V0.2 — Nieuw ontwerp', href: '/voorstellen/v02' },
   { label: 'V0.3 — Editorial dark', href: '/voorstellen/v03' },
   { label: 'V0.4 — Licht redactioneel', href: '/voorstellen/v04' },
+  { label: 'V0.5 — Verfijnd voorstel', href: '/voorstellen/v05' },
 ]
 
 export default function Nav({ light = false }: { light?: boolean }) {
