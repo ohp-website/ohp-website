@@ -1,0 +1,181 @@
+.section {
+  background: #F5F0E8;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
+}
+
+.header {
+  max-width: 1100px;
+  margin: 0 auto 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(2rem, 3vw, 3rem);
+  color: #0F1F14;
+  line-height: 1.15;
+}
+
+.subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(15, 31, 20, 0.6);
+  max-width: 560px;
+}
+
+.grid {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+/* ── Flip card ── */
+.flipWrap {
+  height: 320px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flipInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flipWrap:hover .flipInner,
+.flippedDefault .flipInner {
+  transform: rotateY(180deg);
+}
+
+.flippedDefault:hover .flipInner {
+  transform: rotateY(180deg);
+}
+
+/* Voorkant */
+.front {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #C9A84C;
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.number {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1;
+}
+
+.divider {
+  width: 2rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 0.25rem 0;
+}
+
+.cardTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.cardBody {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  flex: 1;
+}
+
+.cardLink {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 0.5rem;
+}
+
+/* Achterkant */
+.back {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.backOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 20, 12, 0.85) 0%,
+    rgba(10, 20, 12, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+.backContent {
+  position: relative;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.backTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.backLink {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  color: #C9A84C;
+  text-transform: uppercase;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 580px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -62,7 +62,7 @@ const pakketten = [
 
 export default function KennisKuurPakkettenV05() {
   return (
-    <section className={styles.section}>
+    <section id="kenniskuur-pakketten" className={styles.section}>
       <div className={styles.header}>
         <p className={styles.eyebrow}>KennisKuur abonnement</p>
         <h2 className={styles.title}>Kies jouw niveau van verdieping.</h2>

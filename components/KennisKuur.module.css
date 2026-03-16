@@ -125,7 +125,7 @@
 /* Cover mockups */
 .covers {
   position: relative;
-  height: 380px;
+  height: 515px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,8 +133,8 @@
 
 .cover {
   position: absolute;
-  width: 200px;
-  height: 280px;
+  width: 270px;
+  height: 378px;
   border-radius: 2px;
 }
 
@@ -201,11 +201,11 @@
   }
 
   .covers {
-    height: 300px;
+    height: 400px;
   }
 
   .cover {
-    width: 160px;
-    height: 220px;
+    width: 210px;
+    height: 295px;
   }
 }

@@ -35,7 +35,7 @@ const pillars = [
     number: '06',
     title: 'Voeding & Antropologie',
     body: 'Voeding als tool, niet als therapie. Whole foods, evolutionair eten en carnivoor perspectief.',
-    img: '/images/hero-v02-5.jpg',
+    img: '/images/food.jpg',
   },
 ]
 
