@@ -1,0 +1,82 @@
+.hero {
+  background: #0F1F14;
+  padding: clamp(8rem, 11vw, 10rem) clamp(2rem, 6vw, 8rem) clamp(4rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  opacity: 0.8;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  color: #F5F0E8;
+  line-height: 1.08;
+  margin: 0;
+}
+
+.intro {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(245, 240, 232, 0.4);
+}
+
+.content {
+  background: #fff;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 8rem);
+}
+
+.inner {
+  max-width: 720px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.inner h2 {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #0F1F14;
+  margin: 2.5rem 0 0.75rem;
+}
+
+.inner h2:first-child {
+  margin-top: 0;
+}
+
+.inner p,
+.inner ul {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(15, 31, 20, 0.7);
+  margin: 0;
+}
+
+.inner ul {
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.inner a {
+  color: #2D5A27;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.inner a:hover {
+  color: #0F1F14;
+}

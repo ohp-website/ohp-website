@@ -1,9 +1,15 @@
+'use client'
+
+import { useRouter } from 'next/navigation'
+import { useCart } from '@/lib/cart'
 import styles from './KennisKuurPakkettenV05.module.css'
 
 const pakketten = [
   {
-    name: 'Basis',
-    price: '€9',
+    slug: 'basis',
+    id: 'kenniskuur-basis',
+    name: 'KennisKuur Basis',
+    price: 9,
     period: 'per maand',
     description: 'Toegang tot de maandelijkse KennisKuur editie.',
     features: [
@@ -15,8 +21,10 @@ const pakketten = [
     highlighted: false,
   },
   {
-    name: 'Standaard',
-    price: '€17',
+    slug: 'standaard',
+    id: 'kenniskuur-standaard',
+    name: 'KennisKuur Standaard',
+    price: 17,
     period: 'per maand',
     description: 'De meest gekozen optie voor serieuze lezers.',
     features: [
@@ -30,8 +38,10 @@ const pakketten = [
     badge: 'Meest gekozen',
   },
   {
-    name: 'Plus',
-    price: '€27',
+    slug: 'plus',
+    id: 'kenniskuur-plus',
+    name: 'KennisKuur Plus',
+    price: 27,
     period: 'per maand',
     description: 'Voor professionals die dieper willen gaan.',
     features: [
@@ -44,23 +54,40 @@ const pakketten = [
     highlighted: false,
   },
   {
-    name: 'Jaarlijks',
-    price: '€149',
-    period: 'per jaar',
-    description: 'Beste waarde — twee maanden gratis.',
+    slug: 'elite',
+    id: 'kenniskuur-elite',
+    name: 'KennisKuur Elite',
+    price: 247,
+    period: 'per maand',
+    description: 'Kennisplatform én persoonlijk coachingstraject — voor wie écht wil transformeren.',
     features: [
       'Alles uit Plus',
-      'Twee maanden gratis',
-      'Fysieke editie per post',
-      'Persoonlijk welkomstgesprek',
+      'Exclusieve korting op oude publicaties',
+      '5 gratis publicaties naar keuze bij aanmelding',
+      '2× per maand 1:1 consult van 30 minuten',
+      'Keuze uit consulting-pillars (bijv. Testosteronoptimalisatie, Afvallen, Bio-hacking)',
     ],
-    cta: 'Start Jaarlijks',
+    cta: 'Vraag Elite aan',
     highlighted: false,
-    badge: 'Beste waarde',
+    badge: 'Coaching',
   },
 ]
 
 export default function KennisKuurPakkettenV05() {
+  const { addItem } = useCart()
+  const router = useRouter()
+
+  const handleKies = (pak: typeof pakketten[number]) => {
+    addItem({
+      id: pak.id,
+      type: 'subscription',
+      name: pak.name,
+      price: pak.price,
+      period: pak.period,
+    })
+    router.push('/winkelwagen/')
+  }
+
   return (
     <section id="kenniskuur-pakketten" className={styles.section}>
       <div className={styles.header}>
@@ -83,7 +110,7 @@ export default function KennisKuurPakkettenV05() {
             <div className={styles.cardTop}>
               <h3 className={styles.name}>{pak.name}</h3>
               <div className={styles.priceRow}>
-                <span className={styles.price}>{pak.price}</span>
+                <span className={styles.price}>€{pak.price}</span>
                 <span className={styles.period}>{pak.period}</span>
               </div>
               <p className={styles.description}>{pak.description}</p>
@@ -98,9 +125,12 @@ export default function KennisKuurPakkettenV05() {
               ))}
             </ul>
 
-            <span className={`${styles.cta} ${pak.highlighted ? styles.ctaHighlighted : ''}`}>
+            <button
+              onClick={() => handleKies(pak)}
+              className={`${styles.cta} ${pak.highlighted ? styles.ctaHighlighted : ''}`}
+            >
               {pak.cta}
-            </span>
+            </button>
           </div>
         ))}
       </div>

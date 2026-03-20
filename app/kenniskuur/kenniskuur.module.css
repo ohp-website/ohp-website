@@ -1,0 +1,55 @@
+.pageHeader {
+  position: relative;
+  background: #F5F0E8;
+  /* nav is exact 162px (10.125rem) hoog — zichtbare ruimte boven = onder */
+  padding-top: calc(162px + 3rem);
+  padding-bottom: 3rem;
+  padding-left: clamp(2rem, 8vw, 10rem);
+  padding-right: clamp(2rem, 8vw, 10rem);
+}
+
+/* Decoratieve afbeelding rechts — vervaagt van links naar rechts zichtbaar */
+.pageHeaderImage {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 55%;
+  height: 100%;
+  background-image: url('/images/hero-leaves.jpg');
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  opacity: 0.22;
+  mix-blend-mode: multiply;
+  filter: sepia(40%) saturate(60%);
+  mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 35%, black 75%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0,0,0,0.5) 35%, black 75%);
+  pointer-events: none;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(3.25rem, 6vw, 6rem);
+  color: #0F1F14;
+  line-height: 1.02;
+  margin-bottom: 2rem;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(15, 31, 20, 0.55);
+  max-width: 52ch;
+}

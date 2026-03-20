@@ -113,6 +113,38 @@
   opacity: 0.85;
 }
 
+.cartIcon {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  transition: color 0.3s ease;
+  padding: 0.25rem;
+}
+
+.cartIcon:hover {
+  color: var(--text-primary);
+}
+
+.cartBadge {
+  position: absolute;
+  top: -4px;
+  right: -6px;
+  background: var(--gold);
+  color: var(--deep-green);
+  font-size: 0.6rem;
+  font-weight: 600;
+  line-height: 1;
+  min-width: 16px;
+  height: 16px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 3px;
+}
+
 /* Voorstellen dropdown */
 .voorstellenWrap {
   position: relative;

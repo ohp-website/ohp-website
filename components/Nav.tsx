@@ -1,9 +1,10 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import styles from './Nav.module.css'
+import { useCart } from '@/lib/cart'
 
 const navLinks = [
   { label: 'Over Philip', href: '/over' },
@@ -13,20 +14,9 @@ const navLinks = [
   { label: 'Community', href: '/community' },
 ]
 
-const voorstellenItems = [
-  { label: 'V0.1 — Huidig ontwerp', href: '/' },
-  { label: 'V0.2 — Nieuw ontwerp', href: '/voorstellen/v02' },
-  { label: 'V0.3 — Editorial dark', href: '/voorstellen/v03' },
-  { label: 'V0.4 — Licht redactioneel', href: '/voorstellen/v04' },
-  { label: 'V0.5 — Verfijnd voorstel', href: '/voorstellen/v05' },
-  { label: 'V0.6 — Goud & Masonry', href: '/voorstellen/v06' },
-  { label: 'V0.7 — Ons voorstel', href: '/voorstellen/v07' },
-]
-
-export default function Nav({ light = false }: { light?: boolean }) {
+export default function Nav({ light = false, solid = false }: { light?: boolean; solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
-  const [dropdownOpen, setDropdownOpen] = useState(false)
-  const dropdownRef = useRef<HTMLDivElement>(null)
+  const { totalItems } = useCart()
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50)
@@ -34,18 +24,8 @@ export default function Nav({ light = false }: { light?: boolean }) {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
-        setDropdownOpen(false)
-      }
-    }
-    document.addEventListener('mousedown', handleClickOutside)
-    return () => document.removeEventListener('mousedown', handleClickOutside)
-  }, [])
-
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ''} ${light ? styles.light : ''}`}>
+    <nav className={`${styles.nav} ${(scrolled || solid) ? styles.scrolled : ''} ${light ? styles.light : ''}`}>
       <Link href="/">
         <Image
           src="/logo.png"
@@ -60,46 +40,30 @@ export default function Nav({ light = false }: { light?: boolean }) {
       <ul className={styles.links}>
         {navLinks.map((link) => (
           <li key={link.href}>
-            <span className={styles.link}>
+            <Link href={link.href} className={styles.link}>
               {link.label}
-            </span>
+            </Link>
           </li>
         ))}
       </ul>
 
-      <div className={styles.voorstellenWrap} ref={dropdownRef}>
-        <button
-          className={styles.voorstellenBtn}
-          onClick={() => setDropdownOpen((v) => !v)}
-          aria-expanded={dropdownOpen}
-        >
-          Voorstellen
-          <span className={`${styles.caret} ${dropdownOpen ? styles.caretOpen : ''}`}>▾</span>
-        </button>
-        {dropdownOpen && (
-          <ul className={styles.dropdown}>
-            {voorstellenItems.map((item) => (
-              <li key={item.href}>
-                <Link
-                  href={item.href}
-                  className={styles.dropdownLink}
-                  onClick={() => setDropdownOpen(false)}
-                >
-                  {item.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        )}
-      </div>
-
       <div className={styles.ctaGroup}>
-        <span className={styles.ctaSecondary}>
+        <Link href="/winkelwagen/" className={styles.cartIcon} aria-label="Winkelwagen">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          {totalItems > 0 && (
+            <span className={styles.cartBadge}>{totalItems}</span>
+          )}
+        </Link>
+        <Link href="/boek/" className={styles.ctaSecondary}>
           Bestel het boek
-        </span>
-        <span className={styles.cta}>
+        </Link>
+        <Link href="/kenniskuur" className={styles.cta}>
           Word Lid
-        </span>
+        </Link>
       </div>
     </nav>
   )

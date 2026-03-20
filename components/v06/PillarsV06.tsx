@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import styles from './PillarsV06.module.css'
 
 const pillars = [
@@ -6,36 +7,42 @@ const pillars = [
     title: 'Zonlicht & Licht',
     body: 'Hoe licht je biologie stuurt — van melatonine tot cortisolritme en mitochondriale functie.',
     img: '/images/hero-v02-2.jpg',
+    href: '/kennisbank/zonlicht-lichttherapie/',
   },
   {
     number: '02',
     title: 'Hormonen & Metabolisme',
     body: 'De hormonale architectuur achter energie, gewicht, slaap en vitaliteit. Geen dieet, wel biologie.',
     img: '/images/hero-v02.jpg',
+    href: null,
   },
   {
     number: '03',
     title: 'Biologie & Wetenschap',
     body: 'Evidence-based inzichten uit actueel onderzoek, vertaald naar begrijpelijke en toepasbare kennis.',
     img: '/images/hero-v02-4.jpg',
+    href: null,
   },
   {
     number: '04',
     title: 'Leefstijlinterventies',
     body: 'Concrete handelingen met groot effect: kou, hitte, beweging, timing en omgevingsfactoren.',
     img: '/images/hero-v04.jpg',
+    href: null,
   },
   {
     number: '05',
     title: 'Vruchtbaarheid & Gezin',
     body: 'Optimale gezondheid als fundament voor vruchtbaarheid, zwangerschap en het opgroeien van kinderen.',
     img: '/images/hero-v02-3.jpg',
+    href: null,
   },
   {
     number: '06',
     title: 'Voeding & Antropologie',
     body: 'Voeding als tool, niet als therapie. Whole foods, evolutionair eten en carnivoor perspectief.',
     img: '/images/food.jpg',
+    href: null,
   },
 ]
 
@@ -51,11 +58,9 @@ export default function PillarsV06() {
       </div>
 
       <div className={styles.grid}>
-        {pillars.map((pillar, i) => (
-          <div key={pillar.number} className={`${styles.flipWrap} ${i === 0 ? styles.flippedDefault : ''}`}>
+        {pillars.map((pillar, i) => {
+          const cardContent = (
             <div className={styles.flipInner}>
-
-              {/* Voorkant — goud */}
               <div className={styles.front}>
                 <span className={styles.number}>{pillar.number}</span>
                 <div className={styles.divider} />
@@ -63,8 +68,6 @@ export default function PillarsV06() {
                 <p className={styles.cardBody}>{pillar.body}</p>
                 <span className={styles.cardLink}>Lees meer →</span>
               </div>
-
-              {/* Achterkant — foto */}
               <div
                 className={styles.back}
                 style={{ backgroundImage: `url(${pillar.img})` }}
@@ -75,10 +78,23 @@ export default function PillarsV06() {
                   <span className={styles.backLink}>Lees meer →</span>
                 </div>
               </div>
-
             </div>
-          </div>
-        ))}
+          )
+
+          return pillar.href ? (
+            <Link
+              key={pillar.number}
+              href={pillar.href}
+              className={`${styles.flipWrap} ${i === 0 ? styles.flippedDefault : ''}`}
+            >
+              {cardContent}
+            </Link>
+          ) : (
+            <div key={pillar.number} className={`${styles.flipWrap} ${i === 0 ? styles.flippedDefault : ''}`}>
+              {cardContent}
+            </div>
+          )
+        })}
       </div>
     </section>
   )

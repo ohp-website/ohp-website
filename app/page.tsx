@@ -1,12 +1,13 @@
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Missie from '@/components/Missie'
-import Pillars from '@/components/Pillars'
-import KennisKuur from '@/components/KennisKuur'
-import Testimonials from '@/components/Testimonials'
+import PillarsV06 from '@/components/v06/PillarsV06'
+import KennisKuurV07 from '@/components/v07/KennisKuurV07'
 import Ticker from '@/components/Ticker'
+import TestimonialsQuoteV07 from '@/components/v07/TestimonialsQuoteV07'
+import TestimonialsV06 from '@/components/v06/TestimonialsV06'
 import Publicaties from '@/components/Publicaties'
-import LeadMagnet from '@/components/LeadMagnet'
+import LeadMagnetV02 from '@/components/v02/LeadMagnetV02'
 import Boek from '@/components/Boek'
 import Footer from '@/components/Footer'
 
@@ -17,12 +18,13 @@ export default function HomePage() {
       <main>
         <Hero />
         <Missie />
-        <Pillars />
-        <KennisKuur />
+        <PillarsV06 />
+        <KennisKuurV07 />
         <Ticker />
-        <Testimonials />
+        <TestimonialsQuoteV07 />
+        <TestimonialsV06 />
         <Publicaties />
-        <LeadMagnet />
+        <LeadMagnetV02 />
         <Boek />
       </main>
       <Footer />

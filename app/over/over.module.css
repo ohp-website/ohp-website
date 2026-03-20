@@ -1,0 +1,485 @@
+/* ── Hero ── */
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+
+.heroPhoto {
+  position: relative;
+  min-height: 60vh;
+  background: #0a1a0e;
+  overflow: hidden;
+}
+
+.heroImg {
+  object-fit: cover;
+  object-position: center top;
+  animation: kenBurns 10s ease-in-out infinite alternate;
+  transform-origin: center top;
+}
+
+@keyframes kenBurns {
+  from {
+    transform: scale(1.08);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.heroText {
+  background: #0F1F14;
+  padding: clamp(8rem, 11vw, 10rem) clamp(3rem, 6vw, 6rem) clamp(4rem, 6vw, 5rem);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1.75rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  opacity: 0.8;
+}
+
+.heroTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(3rem, 5vw, 5rem);
+  color: #F5F0E8;
+  line-height: 1.05;
+}
+
+.heroIntro {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(245, 240, 232, 0.65);
+  max-width: 480px;
+}
+
+/* ── Verhaal ── */
+.story {
+  background: #F5F0E8;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
+}
+
+.storyInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.sectionEyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #2D5A27;
+  font-weight: 500;
+}
+
+.storyGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.storyLeft {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.storyTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.15;
+}
+
+.storyQuote {
+  border-left: 2px solid #C9A84C;
+  padding-left: 1.5rem;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.quoteMark {
+  font-family: var(--font-cormorant), serif;
+  font-size: 4rem;
+  font-weight: 600;
+  color: #C9A84C;
+  line-height: 0.7;
+  display: block;
+}
+
+.storyQuote p,
+.storyQuote {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.1rem, 1.6vw, 1.35rem);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.5;
+  color: rgba(15, 31, 20, 0.65);
+}
+
+.storyText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(15, 31, 20, 0.75);
+}
+
+/* ── Stats ── */
+.stats {
+  background: #2D5A27;
+  padding: clamp(3rem, 5vw, 4.5rem) clamp(2rem, 6vw, 8rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1.25rem 3rem;
+}
+
+.statNumber {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.5rem, 4vw, 3.5rem);
+  font-weight: 600;
+  color: #F5F0E8;
+  line-height: 1;
+}
+
+.statLabel {
+  font-size: 0.75rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.45);
+  font-weight: 400;
+}
+
+.statDivider {
+  width: 1px;
+  height: 3.5rem;
+  background: rgba(245, 240, 232, 0.15);
+}
+
+/* ── Beliefs ── */
+.beliefs {
+  background: #F5F0E8;
+  padding: clamp(5rem, 10vw, 9rem) clamp(2rem, 6vw, 8rem);
+}
+
+.beliefsInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 3.5rem;
+}
+
+.beliefsHeader {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.beliefsTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.1;
+  max-width: 600px;
+}
+
+.beliefsSubtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(15, 31, 20, 0.6);
+  max-width: 520px;
+}
+
+/* Flip card grid */
+.beliefsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.flipWrap {
+  height: 320px;
+  perspective: 1200px;
+  cursor: pointer;
+}
+
+.flipInner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+}
+
+.flipWrap:hover .flipInner {
+  transform: rotateY(180deg);
+}
+
+.flipFront {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  background: #C9A84C;
+  padding: 2.25rem 2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.flipNumber {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2.8rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1;
+}
+
+.flipDivider {
+  width: 2rem;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.35);
+  margin: 0.25rem 0;
+}
+
+.flipTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: 1.35rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+.flipBody {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.78);
+  flex: 1;
+}
+
+.flipBack {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.flipBackOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(10, 20, 12, 0.85) 0%,
+    rgba(10, 20, 12, 0.3) 60%,
+    transparent 100%
+  );
+}
+
+.flipBackContent {
+  position: relative;
+  padding: 2rem;
+}
+
+.flipBackTitle {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #fff;
+  line-height: 1.2;
+}
+
+/* ── Boek ── */
+.boek {
+  background: #fff;
+  padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 6vw, 8rem);
+  border-top: 1px solid rgba(15, 31, 20, 0.07);
+}
+
+.boekInner {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.boekCover {
+  flex-shrink: 0;
+}
+
+.boekImg {
+  display: block;
+  width: 260px;
+  height: auto;
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 20px 48px rgba(0, 0, 0, 0.14);
+}
+
+.boekText {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.boekTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2.2rem, 3.5vw, 3.2rem);
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.1;
+}
+
+.boekBody {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.85;
+  color: rgba(15, 31, 20, 0.65);
+  max-width: 480px;
+}
+
+.boekMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding-top: 0.25rem;
+}
+
+.boekMetaItem {
+  font-size: 0.78rem;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(15, 31, 20, 0.4);
+}
+
+.boekMetaDot {
+  color: rgba(15, 31, 20, 0.25);
+  font-size: 0.9rem;
+}
+
+.boekBtn {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.9rem 2rem;
+  background: #0F1F14;
+  color: #F5F0E8;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s ease;
+}
+
+.boekBtn:hover {
+  background: #2D5A27;
+}
+
+/* ── CTA ── */
+.cta {
+  background: #0F1F14;
+  padding: clamp(5rem, 10vw, 8rem) clamp(2rem, 6vw, 8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.ctaEyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  opacity: 0.8;
+}
+
+.ctaTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: #F5F0E8;
+  line-height: 1.1;
+  max-width: 560px;
+}
+
+.ctaBody {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(245, 240, 232, 0.6);
+  max-width: 520px;
+}
+
+.ctaBtn {
+  margin-top: 0.5rem;
+  display: inline-block;
+  padding: 0.9rem 2rem;
+  background: #C9A84C;
+  color: #0F1F14;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background: #d4b55e;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; }
+  .heroPhoto { min-height: 50vw; }
+  .storyGrid { grid-template-columns: 1fr; gap: 2rem; }
+  .beliefsGrid { grid-template-columns: repeat(2, 1fr); }
+  .boekInner { grid-template-columns: 1fr; gap: 3rem; }
+  .boekImg { width: 180px; }
+  .statDivider { display: none; }
+}
+
+@media (max-width: 580px) {
+  .beliefsGrid { grid-template-columns: 1fr; }
+  .flipWrap { height: 280px; }
+}

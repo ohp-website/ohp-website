@@ -1,0 +1,197 @@
+/* Hero */
+.hero {
+  background: #0F1F14;
+  padding: clamp(3rem, 5vw, 5rem) clamp(2rem, 6vw, 8rem) clamp(3rem, 5vw, 4rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  opacity: 0.8;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #F5F0E8;
+  line-height: 1.08;
+  max-width: 780px;
+}
+
+.intro {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(245, 240, 232, 0.85);
+  max-width: 640px;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  color: rgba(245, 240, 232, 0.55);
+  font-weight: 300;
+}
+
+/* Editie grid */
+.edities {
+  background: #F5F0E8;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 8rem);
+}
+
+.editiesInner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.editiesHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+}
+
+.editiesTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  font-weight: 600;
+  color: #0F1F14;
+}
+
+.editiesBadge {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(15, 31, 20, 0.4);
+  font-weight: 400;
+}
+
+.editiesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+}
+
+.editieCard {
+  border: 1px solid rgba(45, 90, 39, 0.15);
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  background: #fff;
+}
+
+.editieCard:hover {
+  border-color: #2D5A27;
+  background: #fafdf9;
+}
+
+.editieNummer {
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  font-weight: 500;
+}
+
+.editieTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.25;
+}
+
+.editieDescription {
+  font-size: 0.88rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(15, 31, 20, 0.6);
+  flex: 1;
+}
+
+.editieMeta {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.75rem;
+  color: rgba(15, 31, 20, 0.4);
+  font-weight: 300;
+  margin-top: 0.25rem;
+}
+
+.editieCta {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #2D5A27;
+  margin-top: 0.5rem;
+}
+
+/* CTA sectie */
+.cta {
+  background: #2D5A27;
+  padding: clamp(4rem, 8vw, 6rem) clamp(2rem, 6vw, 8rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  align-items: flex-start;
+}
+
+.ctaEyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: rgba(245, 240, 232, 0.6);
+  font-weight: 400;
+}
+
+.ctaTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.8rem, 3vw, 2.8rem);
+  font-weight: 600;
+  color: #F5F0E8;
+  line-height: 1.15;
+  max-width: 600px;
+}
+
+.ctaText {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.7);
+  max-width: 540px;
+}
+
+.ctaBtn {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.9rem 2rem;
+  background: #F5F0E8;
+  color: #0F1F14;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.ctaBtn:hover {
+  background: #fff;
+}
+
+@media (max-width: 768px) {
+  .editiesGrid { grid-template-columns: 1fr; }
+}

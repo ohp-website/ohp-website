@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Inter, Bebas_Neue } from "next/font/google";
 import "./globals.css";
+import { CartProvider } from "@/lib/cart";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -41,7 +42,7 @@ export default function RootLayout({
       className={`${cormorant.variable} ${inter.variable} ${bebasNeue.variable}`}
     >
       <body style={{ fontFamily: "var(--font-inter), sans-serif" }}>
-        {children}
+        <CartProvider>{children}</CartProvider>
       </body>
     </html>
   );

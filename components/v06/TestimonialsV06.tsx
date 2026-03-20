@@ -1,10 +1,35 @@
-'use client'
+import { createClient } from '@/lib/supabase-server'
+import TestimonialsV06Client from './TestimonialsV06Client'
 
-import { useState } from 'react'
-import Image from 'next/image'
-import styles from './TestimonialsV06.module.css'
+export default async function TestimonialsV06() {
+  let testimonials = null
 
-const screenshots = [
+  try {
+    const supabase = await createClient()
+    const { data } = await supabase
+      .from('testimonials')
+      .select('id, image_url, is_featured')
+      .order('is_featured', { ascending: false })
+      .order('sort_order', { ascending: true })
+      .order('created_at', { ascending: false })
+    testimonials = data
+  } catch {
+    // Supabase nog niet geconfigureerd — fallback op hardcoded screenshots
+  }
+
+  // Fallback op hardcoded screenshots als Supabase nog niet gevuld is
+  const items = testimonials && testimonials.length > 0
+    ? testimonials
+    : fallbackScreenshots.map((url, i) => ({
+        id: String(i),
+        image_url: url,
+        is_featured: false,
+      }))
+
+  return <TestimonialsV06Client items={items} />
+}
+
+const fallbackScreenshots = [
   '/images/testimonials-leefstijl/Screenshot_20240326-105424_Instagram.jpg',
   '/images/testimonials-leefstijl/Screenshot_20240326-121455_Instagram.jpg',
   '/images/testimonials-leefstijl/Screenshot_20240405-101509_Instagram.jpg',
@@ -47,53 +72,3 @@ const screenshots = [
   '/images/testimonials-leefstijl/Screenshot_20251002-062027_Instagram.jpg',
   '/images/testimonials-leefstijl/Screenshot_20260106_160421_Instagram.jpg',
 ]
-
-export default function TestimonialsV06() {
-  const [lightbox, setLightbox] = useState<string | null>(null)
-
-  return (
-    <section className={styles.section}>
-      <div className={styles.header}>
-        <p className={styles.eyebrow}>Wat leden zeggen</p>
-        <h2 className={styles.title}>98% van onze leden verlengt maand na maand.</h2>
-        <p className={styles.subtitle}>
-          Echte berichten van echte leden — over energie, focus, slaap en alles wat daartussen zit.
-        </p>
-      </div>
-
-      <div className={styles.masonry}>
-        {screenshots.map((src, i) => (
-          <div
-            key={i}
-            className={styles.item}
-            onClick={() => setLightbox(src)}
-          >
-            <Image
-              src={src}
-              alt={`Testimonial ${i + 1}`}
-              width={400}
-              height={600}
-              className={styles.img}
-              sizes="(max-width: 600px) 100vw, (max-width: 900px) 50vw, 25vw"
-            />
-          </div>
-        ))}
-      </div>
-
-      {lightbox && (
-        <div className={styles.lightbox} onClick={() => setLightbox(null)}>
-          <div className={styles.lightboxInner} onClick={(e) => e.stopPropagation()}>
-            <button className={styles.lightboxClose} onClick={() => setLightbox(null)}>✕</button>
-            <Image
-              src={lightbox}
-              alt="Testimonial"
-              width={480}
-              height={720}
-              className={styles.lightboxImg}
-            />
-          </div>
-        </div>
-      )}
-    </section>
-  )
-}

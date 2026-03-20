@@ -1,0 +1,48 @@
+.section {
+  background: #F5F0E8;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(8rem, 11vw, 10rem) clamp(2rem, 6vw, 8rem) clamp(4rem, 6vw, 5rem);
+  gap: 1.5rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  color: #0F1F14;
+  line-height: 1.08;
+  max-width: 700px;
+}
+
+.body {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.8;
+  color: rgba(15, 31, 20, 0.6);
+  max-width: 540px;
+}
+
+.back {
+  margin-top: 1rem;
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: rgba(15, 31, 20, 0.4);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  align-self: flex-start;
+}
+
+.back:hover {
+  color: #0F1F14;
+}

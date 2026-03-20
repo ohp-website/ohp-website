@@ -1,0 +1,109 @@
+.wrap {
+  position: relative;
+}
+
+/* Gradient die de teaser laat uitfaden */
+.fade {
+  height: 140px;
+  background: linear-gradient(to bottom, transparent, #ffffff);
+  margin-bottom: -1px;
+  pointer-events: none;
+}
+
+/* Het paywall-blok zelf */
+.block {
+  background: #fff;
+  border-top: 2px solid #0F1F14;
+  padding: clamp(2.5rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  max-width: 680px;
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: #C9A84C;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.15;
+}
+
+.sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(15, 31, 20, 0.65);
+}
+
+.benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.benefits li {
+  font-size: 0.88rem;
+  font-weight: 300;
+  color: rgba(15, 31, 20, 0.75);
+  padding-left: 1.4rem;
+  position: relative;
+  line-height: 1.5;
+}
+
+.benefits li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: #2D5A27;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.btnPrimary {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.9rem 2.25rem;
+  background: #2D5A27;
+  color: #F5F0E8;
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.btnPrimary:hover {
+  background: #1e3e1a;
+}
+
+.btnSecondary {
+  font-size: 0.82rem;
+  font-weight: 300;
+  color: rgba(15, 31, 20, 0.55);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.btnSecondary:hover {
+  color: #0F1F14;
+}

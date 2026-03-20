@@ -1,0 +1,118 @@
+.header {
+  background: #0F1F14;
+  padding: clamp(8rem, 14vw, 12rem) clamp(2rem, 6vw, 8rem) clamp(4rem, 7vw, 6rem);
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: #C9A84C;
+  opacity: 0.8;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-weight: 600;
+  font-size: clamp(2.8rem, 5vw, 5rem);
+  color: #F5F0E8;
+  line-height: 1.05;
+  max-width: 700px;
+}
+
+.subtitle {
+  font-size: clamp(1rem, 1.4vw, 1.1rem);
+  font-weight: 300;
+  line-height: 1.75;
+  color: rgba(245, 240, 232, 0.6);
+  max-width: 560px;
+}
+
+/* Pillar grid */
+.grid {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(4rem, 8vw, 7rem) clamp(2rem, 6vw, 8rem);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.card {
+  border: 1px solid rgba(45, 90, 39, 0.2);
+  padding: 2.25rem 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  transition: border-color 0.3s ease, background 0.3s ease;
+  background: #fff;
+}
+
+.card:hover:not(.cardComingSoon) {
+  border-color: #2D5A27;
+  background: #fafdf9;
+}
+
+.cardComingSoon {
+  opacity: 0.5;
+}
+
+.cardLink {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: inherit;
+  height: 100%;
+}
+
+.cardClusters {
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #2D5A27;
+  font-weight: 500;
+}
+
+.cardTitle {
+  font-family: var(--font-cormorant), serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #0F1F14;
+  line-height: 1.2;
+}
+
+.cardDescription {
+  font-size: 0.9rem;
+  font-weight: 300;
+  line-height: 1.65;
+  color: rgba(15, 31, 20, 0.6);
+  flex: 1;
+}
+
+.cardCta {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #2D5A27;
+  margin-top: 0.5rem;
+}
+
+.comingSoon {
+  font-size: 0.72rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(15, 31, 20, 0.35);
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 580px) {
+  .grid { grid-template-columns: 1fr; }
+}

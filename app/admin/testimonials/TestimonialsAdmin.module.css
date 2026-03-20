@@ -1,0 +1,204 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 3rem 2rem;
+  font-family: var(--font-source-sans), sans-serif;
+}
+
+.title {
+  font-family: var(--font-cormorant), serif;
+  font-size: 2rem;
+  color: #0F1F14;
+  margin-bottom: 2.5rem;
+}
+
+.sectionTitle {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #2D5A27;
+  margin-bottom: 1.25rem;
+}
+
+/* Upload form */
+.uploadForm {
+  background: #F5F0E8;
+  border-radius: 12px;
+  padding: 2rem;
+  margin-bottom: 3rem;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #0F1F14;
+}
+
+.fileInput {
+  font-size: 0.9rem;
+  color: #0F1F14;
+}
+
+.previewWrap {
+  border-radius: 8px;
+  overflow: hidden;
+  width: 200px;
+}
+
+.preview {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.toggleLabel {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  cursor: pointer;
+}
+
+.checkbox {
+  margin-top: 3px;
+  width: 16px;
+  height: 16px;
+  accent-color: #2D5A27;
+  flex-shrink: 0;
+}
+
+.toggleText {
+  font-size: 0.9rem;
+  color: #0F1F14;
+  line-height: 1.4;
+}
+
+.error {
+  color: #c0392b;
+  font-size: 0.85rem;
+}
+
+.btn {
+  background: #2D5A27;
+  color: #F5F0E8;
+  border: none;
+  border-radius: 6px;
+  padding: 0.75rem 1.5rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  align-self: flex-start;
+}
+
+.btn:hover:not(:disabled) {
+  background: #1A3A5C;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Overview grid */
+.overview {
+  margin-top: 1rem;
+}
+
+.empty {
+  color: rgba(15, 31, 20, 0.5);
+  font-size: 0.9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fff;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.cardFeatured {
+  border-color: #2D5A27;
+}
+
+.cardImg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.cardActions {
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.badgeFeatured {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #2D5A27;
+}
+
+.badgeRegular {
+  font-size: 0.75rem;
+  color: rgba(15, 31, 20, 0.45);
+}
+
+.btnSecondary {
+  background: none;
+  border: 1px solid #2D5A27;
+  color: #2D5A27;
+  border-radius: 5px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btnSecondary:hover:not(:disabled) {
+  background: #2D5A27;
+  color: #F5F0E8;
+}
+
+.btnSecondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btnDelete {
+  background: none;
+  border: 1px solid #c0392b;
+  color: #c0392b;
+  border-radius: 5px;
+  padding: 0.35rem 0.6rem;
+  font-size: 0.78rem;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.btnDelete:hover:not(:disabled) {
+  background: #c0392b;
+  color: #fff;
+}
+
+.btnDelete:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

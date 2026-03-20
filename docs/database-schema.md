@@ -116,6 +116,22 @@ Gratis e-mailinschrijvingen (lead magnet, nog geen betaald lid).
 
 ---
 
+### `testimonials`
+Testimonials beheerd via de admin-backend door Philip.
+
+| Kolom | Type | Beschrijving |
+|---|---|---|
+| `id` | uuid | Primaire sleutel |
+| `image_url` | text | Publieke URL vanuit Supabase Storage bucket `testimonials` |
+| `is_featured` | boolean | Featured (altijd bovenaan) of regular |
+| `sort_order` | int | Handmatige volgorde binnen featured/regular groep |
+| `created_at` | timestamptz | Uploaddatum |
+
+**RLS:** Publiek lezen, schrijven alleen via service role (admin API routes).
+**Migratie:** `supabase/migrations/20260319_testimonials.sql`
+
+---
+
 ## Supabase Storage Buckets
 
 | Bucket | Toegang | Gebruik |
@@ -123,6 +139,7 @@ Gratis e-mailinschrijvingen (lead magnet, nog geen betaald lid).
 | `publications-pdf` | Privé (via signed URLs) | KennisKuur PDF's per editie |
 | `publication-covers` | Publiek | Cover afbeeldingen |
 | `site-assets` | Publiek | Logo's, hero-afbeeldingen |
+| `testimonials` | Publiek | Testimonial screenshots (upload via admin) |
 
 ---
 

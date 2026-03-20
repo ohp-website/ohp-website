@@ -1,5 +1,5 @@
 import Nav from '@/components/Nav'
-import HeroV07 from '@/components/v07/HeroV07'
+import Hero from '@/components/Hero'
 import Missie from '@/components/Missie'
 import PillarsV06 from '@/components/v06/PillarsV06'
 import KennisKuurV07 from '@/components/v07/KennisKuurV07'
@@ -17,7 +17,7 @@ export default function V07Page() {
     <>
       <Nav />
       <main>
-        <HeroV07 />
+        <Hero />
         <Missie />
         <PillarsV06 />
         <KennisKuurV07 />
